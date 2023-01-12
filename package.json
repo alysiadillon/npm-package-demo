@@ -1,6 +1,18 @@
 {
   "name": "npm-package-demo",
   "version": "0.1.0",
+  "main": "./dist/npm-package-demo.umd.js",
+  "module": "./dist/npm-package-demo.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/npm-package.es.js",
+      "require": "./dist/npm-package.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -19,6 +31,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "rollup": "^3.10.0",
+    "vite": "^4.0.4",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
